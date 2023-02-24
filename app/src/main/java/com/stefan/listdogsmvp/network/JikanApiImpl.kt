@@ -1,4 +1,4 @@
 package com.stefan.listdogsmvp.network
 
-class DogApiImpl {
+class JikanApiImpl {
 }
