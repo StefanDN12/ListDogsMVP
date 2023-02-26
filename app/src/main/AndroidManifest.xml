@@ -15,7 +15,7 @@
         android:theme="@style/Theme.ListDogsMVP"
         tools:targetApi="31">
         <activity
-            android:name=".view.ViewDog"
+            android:name=".view.ViewJinkan"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
