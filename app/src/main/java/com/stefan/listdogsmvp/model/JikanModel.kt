@@ -1,13 +1,18 @@
 package com.stefan.listdogsmvp.model
 
+import com.stefan.listdogsmvp.interactor.JikanPresenterImpl
 import com.stefan.listdogsmvp.interfaces.JikanModelInterface
 
-class JikanModel (jinkanPresenter: ): JikanModelInterface {
+class JikanModel (var jinkanPresenter: JikanPresenterImpl): JikanModelInterface {
 
-    private var jinkanPresenter =
+    private lateinit var jinkanPrst:JikanPresenterImpl
 
+    init {
+        init()
+    }
+    
     fun init(){
-
+        jinkanPrst = jinkanPresenter
     }
     override fun obtainCharacter() {
         TODO("Not yet implemented")
