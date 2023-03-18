@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.stefan.listdogsmvp.R
 import com.stefan.listdogsmvp.interactor.JikanPresenterImpl
 import com.stefan.listdogsmvp.interfaces.JikanPresenter
+import kotlinx.coroutines.*
 
 class ViewJinkan : AppCompatActivity() {
 
@@ -15,6 +16,12 @@ class ViewJinkan : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         init()
+
+        GlobalScope.launch {
+            obtainCharacter()
+        }
+
+
     }
 
 
@@ -23,7 +30,9 @@ class ViewJinkan : AppCompatActivity() {
     }
 
 
-    fun obtainCharacter(){
-        //jikanPresenter.obtainCharacter()
+  suspend fun obtainCharacter(){
+      withContext(Dispatchers.IO){
+          jikanPresenter.obtainCharacter()
+      }
     }
 }
