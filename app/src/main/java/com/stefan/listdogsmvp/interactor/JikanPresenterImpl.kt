@@ -6,9 +6,9 @@ import com.stefan.listdogsmvp.view.ViewJinkan
 
 class JikanPresenterImpl(jikanView: ViewJinkan): JikanPresenter {
 
-
+    private var model = JikanModel(this)
 
     override suspend fun obtainCharacter() {
-        TODO("Not yet implemented")
+        model.obtainCharacter()
     }
 }
