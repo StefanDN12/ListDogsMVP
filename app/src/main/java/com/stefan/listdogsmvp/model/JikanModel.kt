@@ -23,9 +23,9 @@ class JikanModel (var jinkanPresenter: JikanPresenterImpl): JikanModelInterface 
         jinkanPrst = jinkanPresenter
 
     }
-    override suspend fun obtainCharacter() {
+    override suspend fun obtainCharacter(): characterDtModel {
         val call:Response<characterDtModel> = jinkanApi.getRetrofit().create(ApiService::class.java).getCharacterById(5)
-        Log.d("Prueba", call.body().toString())
+        return call.body()!!
     }
 
 }

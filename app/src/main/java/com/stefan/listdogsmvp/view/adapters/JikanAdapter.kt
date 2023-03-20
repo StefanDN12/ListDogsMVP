@@ -13,7 +13,7 @@ import com.stefan.listdogsmvp.model.dtClases.characterDtModel
 
 class JikanAdapter: RecyclerView.Adapter<JikanAdapter.JikanViewHolder>() {
 
-    val characters = listOf<characterDtModel>()
+    val characters = mutableListOf<characterDtModel>()
 
     class JikanViewHolder(view: View): RecyclerView.ViewHolder(view){
 
