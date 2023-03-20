@@ -5,7 +5,9 @@ import android.os.Bundle
 import com.stefan.listdogsmvp.R
 import com.stefan.listdogsmvp.interactor.JikanPresenterImpl
 import com.stefan.listdogsmvp.interfaces.JikanPresenter
+import com.stefan.listdogsmvp.model.dtClases.characterDtModel
 import kotlinx.coroutines.*
+import retrofit2.Response
 
 class ViewJinkan : AppCompatActivity() {
 
@@ -17,7 +19,7 @@ class ViewJinkan : AppCompatActivity() {
 
         init()
 
-        GlobalScope.launch {
+        CoroutineScope(Dispatchers.IO).launch {
             obtainCharacter()
         }
 
